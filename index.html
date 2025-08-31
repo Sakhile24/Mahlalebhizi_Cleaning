@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahlalebizi Cleaning Products | Adventure in Cleanliness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c5aa0;
+            --secondary: #3a3a3a;
+            --accent: #17a2b8;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --success: #28a745;
+            --adventure: #ff6b35;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: linear-gradient(to bottom, #f0f8ff, #ffffff);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--primary);
+        }
+        
+        .logo-subtext {
+            font-size: 12px;
+            color: var(--secondary);
+            margin-top: -5px;
+            letter-spacing: 1.5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+            background-color: #f0f8ff;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--adventure);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: #e55a2b;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        /* Adventure Section */
+        .adventure {
+            background: linear-gradient(135deg, #2c5aa0 0%, #17a2b8 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .adventure-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .adventure h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .adventure p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Products Section */
+        .products {
+            background-color: white;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 5px solid var(--primary);
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--adventure));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .product-card:hover::before {
+            opacity: 1;
+        }
+        
+        .product-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover .product-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .product-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* Pricing Table */
+        .pricing {
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            opacity: 0.05;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .pricing-table th, .pricing-table td {
+            padding: 18px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .pricing-table th {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .pricing-table tr:hover {
+            background-color: #e9f7fe;
+            transform: scale(1.01);
+            transition: all 0.2s;
+        }
+        
+        .pricing-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+            position: relative;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            opacity: 0.03;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+        }
+        
+        .about-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #2c5aa0 0%, #17a2b8 100%);
+            color: white;
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1563453392212-326f5e854473?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            opacity: 0.05;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+            color: var(--adventure);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--adventure);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .pricing-table {
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .pricing-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .adventure h2 {
+                font-size: 2.2rem;
+            }
+            
+            .adventure p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Mahlalebizi Cleaning Logo" class="logo-img">
+                <div>
+                    <div class="logo-text">MAHLALEBHIZI CLEANING</div>
+                    <div class="logo-subtext">& PRODUCTS (PTY) LTD</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#adventure">Why Us</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Embark on a Cleaning Adventure</h1>
+            <p>Discover premium cleaning products that transform chores into triumphs</p>
+            <a href="#products" class="btn">Explore Products</a>
+        </div>
+    </section>
+    
+    <!-- Adventure Section -->
+    <section class="adventure" id="adventure">
+        <div class="container adventure-content">
+            <h2>Your Journey to Spotless Spaces Begins Here</h2>
+            <p>At Mahlalebizi, we believe cleaning should be an adventure, not a chore. Our powerful, professional-grade products are designed to make every cleaning task an satisfying experience.</p>
+            <a href="#pricing" class="btn">View Pricing</a>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Adventure Gear</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-soap"></i>
+                    </div>
+                    <h3 class="product-title">Dishwasher</h3>
+                    <p class="product-description">Professional solutions for sparkling clean dishes</p>
+                    <p class="product-price">From R20</p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="product-title">Car Shampoo</h3>
+                    <p class="product-description">Specialized shampoo for effective car cleaning</p>
+                    <p class="product-price">From R30</p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="product-title">Ammonia Cleaner</h3>
+                    <p class="product-description">Powerful ammonia-based cleaner for tough stains</p>
+                    <p class="product-price">From R25</p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="product-title">Pine Gel</h3>
+                    <p class="product-description">Fresh pine-scented gel cleaner for all surfaces</p>
+                    <p class="product-price">From R20</p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3 class="product-title">Degreaser</h3>
+                    <p class="product-description">Heavy-duty degreaser for kitchen and industrial use</p>
+                    <p class="product-price">From R30</p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-fill-drip"></i>
+                    </div>
+                    <h3 class="product-title">Black Dip</h3>
+                    <p class="product-description">Specialized solution for tire and rubber cleaning</p>
+                    <p class="product-price">From R35</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Expedition Pricing</h2>
+            <p style="text-align: center; margin-bottom: 30px;">All prices are in South African Rand (ZAR)</p>
+            
+            <div style="overflow-x: auto;">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>500G</th>
+                            <th>750ML</th>
+                            <th>1L/KG</th>
+                            <th>2L/KG</th>
+                            <th>5L/KG</th>
+                            <th>20L/KG</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dishwasher</td>
+                            <td>-</td>
+                            <td>R20</td>
+                            <td>-</td>
+                            <td>R35</td>
+                            <td>R65</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>Car Shampoo</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R30</td>
+                            <td>R50</td>
+                            <td>R100</td>
+                            <td>R460</td>
+                        </tr>
+                        <tr>
+                            <td>Degreaser</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R30</td>
+                            <td>R50</td>
+                            <td>R100</td>
+                            <td>R460</td>
+                        </tr>
+                        <tr>
+                            <td>Black Dip</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R35</td>
+                            <td>R60</td>
+                            <td>R90</td>
+                            <td>R450</td>
+                        </tr>
+                        <tr>
+                            <td>Thick Bleach</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R20</td>
+                            <td>R35</td>
+                            <td>R65</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>Pine Gel</td>
+                            <td>R20</td>
+                            <td>-</td>
+                            <td>R35</td>
+                            <td>R60</td>
+                            <td>R120</td>
+                            <td>R600</td>
+                        </tr>
+                        <tr>
+                            <td>Handy Andy</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R20</td>
+                            <td>R35</td>
+                            <td>R65</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>Bubble Bath</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R20</td>
+                            <td>R40</td>
+                            <td>R80</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>Bleach</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R15</td>
+                            <td>R25</td>
+                            <td>R55</td>
+                            <td>R290</td>
+                        </tr>
+                        <tr>
+                            <td>Hand Soap</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R20</td>
+                            <td>R35</td>
+                            <td>R80</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>Carpet Shampoo</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R20</td>
+                            <td>R35</td>
+                            <td>R70</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>Toilet Bowl Cleaner</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R50</td>
+                            <td>R100</td>
+                            <td>R100</td>
+                            <td>R460</td>
+                        </tr>
+                        <tr>
+                            <td>Oven Cleaner</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R30</td>
+                            <td>R50</td>
+                            <td>R65</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>Window Cleaner</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R20</td>
+                            <td>R30</td>
+                            <td>R65</td>
+                            <td>R300</td>
+                        </tr>
+                        <tr>
+                            <td>Floor Stripper</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R30</td>
+                            <td>R50</td>
+                            <td>R70</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>All Purpose Cleaner</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R20</td>
+                            <td>R35</td>
+                            <td>R70</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>Pine Disinfectant</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R20</td>
+                            <td>R35</td>
+                            <td>R65</td>
+                            <td>R350</td>
+                        </tr>
+                        <tr>
+                            <td>Drain Cleaner</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>R40</td>
+                            <td>R70</td>
+                            <td>R160</td>
+                            <td>R640</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Our Expedition</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Mahlalebizi Adventure</h3>
+                    <p>Mahlalebizi Cleaning Products (PTY) LTD is a Johannesburg-based provider of premium cleaning solutions. We're on a mission to transform cleaning from a chore into an adventure.</p>
+                    <p>Our products are carefully formulated to meet the highest standards of effectiveness while being environmentally responsible. We believe that with the right tools, cleaning can be a satisfying and even enjoyable experience.</p>
+                    <p>With our experienced team and dedication to customer satisfaction, we've become the trusted partner for cleaning solutions across multiple industries and households.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1610530539955-2c13c8613c43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Professional cleaning products">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Begin Your Cleaning Adventure</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Start Your Journey</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Base Camp</h4>
+                            <p>138-140 Jules Street, Jeppestown, Johannesburg, 2043</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Expedition Line</h4>
+                            <p>+27 72 255 4878</p>
+                            <p>+27 79 155 1368</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Message Bird</h4>
+                            <p>mmtshangase@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <h4>Expedition ID</h4>
+                            <p>2023/720464/07</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Expedition Hours</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Monday - Friday</h4>
+                            <p>8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Saturday</h4>
+                            <p>9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Sunday</h4>
+                            <p>Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div>
+                            <h4>Delivery Options</h4>
+                            <p>Available throughout Johannesburg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Mahlalebizi Cleaning</h3>
+                    <p>Transforming cleaning from a chore into an adventure with premium products.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Expedition Routes</h3>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#adventure">Why Us</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Product Categories</h3>
+                    <ul>
+                        <li><a href="#">Household Cleaners</a></li>
+                        <li><a href="#">Industrial Solutions</a></li>
+                        <li><a href="#">Specialized Cleaners</a></li>
+                        <li><a href="#">Disinfectants</a></li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Mahlalebizi Cleaning Products (PTY) LTD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
